@@ -17,3 +17,11 @@
 继续报错    `pip install  paddlepaddle`  
 搞定  
 Eiseg目前只能生成COCO格式的dataset，需要转换成YOLO格式。用https://github.com/Sheepy1977/myAiLearningMisc/blob/main/covert.py 
+
+***SAM2***  
+安装SAM2遇到的一些坑：  
+1. https://pytorch.org/get-started/locally/ 必须从这里获得pip install 代码以正确安装torch（先安装对应的CUDA TOOLKIT）  
+2. git clone https://github.com/facebookresearch/segment-anything-2.git  （clone git仓库）  
+3. cd segment-anything-2;  切换当前目录到sam2  
+4. 手动设置CUDA_HOME系统变量为C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1  注意，设置完需要重启系统才能完成。  
+5. 如果直接pip install -e . 遇到numpy错误，确认numpy<2.xx ，可以安装1.24.x  然后使用pip install --no-build-isolation -e . 完成安装  
